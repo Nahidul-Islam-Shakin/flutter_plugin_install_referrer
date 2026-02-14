@@ -2,17 +2,18 @@ group 'com.example.install_referrer'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.6.10'
+    ext.kotlin_version = '1.8.22'  // modern Kotlin version
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.0'
+        classpath 'com.android.tools.build:gradle:8.1.1' // AGP 8.x supports compileSdk 36+
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
+
 
 rootProject.allprojects {
     repositories {
@@ -43,6 +44,7 @@ android {
 
     defaultConfig {
         minSdkVersion 16
+        targetSdkVersion 36
     }
 }
 
